@@ -1,20 +1,16 @@
 package io.zipcoder;
 
-import org.junit.Before;
 
-package io.zipcoder.pets;
-
-import io.zipcoder.polymorphism.Animal;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class CatTest extends Pet {
 
-
     @Test
     public void testGetName() {
         Pet pet = new Cat("cat", "Sylvester");
         String expected = "Sylvester";
+        pet.setName(expected);
         String actual = pet.getName();
         Assert.assertEquals(expected, actual);
     }
@@ -34,6 +30,4 @@ public class CatTest extends Pet {
         Assert.assertTrue(TestCat instanceof Cat);
 
     }
-
-
 }

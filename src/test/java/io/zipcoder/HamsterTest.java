@@ -1,21 +1,22 @@
-package io.zipcoder.pets;
+package io.zipcoder;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-public class HampsterTest extends Pet {
+public class HamsterTest extends Pet {
 
     @Test
     public void testGetName() {
-        Pet pet = new Hampster("hampster", "Apple");
+        Pet pet = new Hamster("hampster", "Apple");
         String expected = "Apple";
+        pet.setName(expected);
         String actual = pet.getName();
         Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void testSpeak() {
-        Pet pet = new Hampster("hampster", "Elvis");
+        Pet pet = new Hamster("hampster", "Elvis");
         String expected = "Squeak, Squeak.";
         String actual = pet.speak();
         Assert.assertEquals(expected, actual);
@@ -23,11 +24,10 @@ public class HampsterTest extends Pet {
 
     @Test
     public void inheritanceTest() {
-        Hampster TestHampster = new Hampster("hampster", "Earl");
+        Hamster TestHampster = new Hamster("hampster", "Earl");
         Assert.assertTrue(TestHampster instanceof Pet);
-        Assert.assertTrue(TestHampster instanceof Hampster);
+        Assert.assertTrue(TestHampster instanceof Hamster);
 
     }
 }
-
 
