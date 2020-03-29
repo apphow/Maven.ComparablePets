@@ -1,11 +1,12 @@
-package io.zipcoder;
+package io.zipcoder.pets;
+
+import io.zipcoder.Animal;
 
 import java.util.ArrayList;
 
-public class Pet {
+public class Pet implements Comparable<Pet> {
    private String name;
    private String type;
-   ArrayList<Pet> petTestArray = new ArrayList<>();
 
     public Pet(String name, String type) {
         this.name = name;
@@ -13,6 +14,7 @@ public class Pet {
     }
 
     public ArrayList<Pet> getPetTestArray() {
+        ArrayList<Pet> petTestArray = null;
         return petTestArray;
     }
 
@@ -36,5 +38,10 @@ public class Pet {
 
     public String speak() {
         return "";
+    }
+
+    @Override
+    public int compareTo(Pet o) {
+        return 0;
     }
 }

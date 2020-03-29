@@ -1,14 +1,15 @@
 package io.zipcoder;
 
 
+import io.zipcoder.pets.Cat;
+import io.zipcoder.pets.Dog;
+import io.zipcoder.pets.Hamster;
+import io.zipcoder.pets.Pet;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 public class ApplicationTest {
 
@@ -18,17 +19,17 @@ public class ApplicationTest {
 
     @Test
     public void nameSortTest() {
-        Hamster testHamster2 = new Hamster((String) Hamster, "Apple");
+        io.zipcoder.pets.Hamster testHamster2 = new Hamster((String) Hamster, "Apple");
         Hamster testHamster = new Hamster(Hamster, "Elvis");
         Cat testCat2 = new Cat(Cat, "Garfield");
         Cat testCat3 = new Cat(Cat, "Jeff");
         Dog testDog2 = new Dog(Cat, "Jeff");
         Dog testDog = new Dog(Cat, "Rex");
-        Cat testCat = new Cat(Cat, "Socks");
+        io.zipcoder.pets.Cat testCat = new Cat(Cat, "Socks");
 
         //expectedArray made up of pets added in expected order:
         //sort by name first, then by type if names are the same.
-        ArrayList<Pet> expectedArray = new ArrayList<Pet>();
+        ArrayList<io.zipcoder.pets.Pet> expectedArray = new ArrayList<Pet>();
         expectedArray.add(testHamster2);
         expectedArray.add(testHamster);
         expectedArray.add(testCat2);
@@ -37,7 +38,7 @@ public class ApplicationTest {
         expectedArray.add(testDog);
         expectedArray.add(testCat);
 
-        ArrayList<Pet> petTestArray = new ArrayList<Pet>();
+        ArrayList<Pet> petTestArray = new ArrayList<>();
         petTestArray.add(testCat);
         petTestArray.add(testCat2);
         petTestArray.add(testCat3);
@@ -46,7 +47,8 @@ public class ApplicationTest {
         petTestArray.add(testHamster);
         petTestArray.add(testHamster2);
 
-        //Collections.sort(List);
+        Collections.sort(expectedArray);
+        //Collections.sort(petTestArray, expectedArray);
         //expected order should match sort output.
         Assert.assertEquals(expectedArray, petTestArray);
         //The above lines are asking for a List instead of an ArrayList.

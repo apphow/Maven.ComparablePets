@@ -1,6 +1,5 @@
-package io.zipcoder;
 
-import java.util.ArrayList;
+package io.zipcoder.pets;
 
 public class Cat extends Pet {
     public Cat(String type, String name) {super(type, name);}

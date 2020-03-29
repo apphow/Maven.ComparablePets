@@ -1,6 +1,11 @@
 package io.zipcoder;
 
 
+import io.zipcoder.pets.Cat;
+import io.zipcoder.pets.Dog;
+import io.zipcoder.pets.Hamster;
+import io.zipcoder.pets.Pet;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
